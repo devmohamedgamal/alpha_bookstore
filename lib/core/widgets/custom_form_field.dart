@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -12,6 +11,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: hint == "Password" ? true : false,
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: TextStyle(
@@ -21,9 +21,10 @@ class CustomTextFormField extends StatelessWidget {
         ),
         suffixIcon: icon,
         border: const OutlineInputBorder(
-            borderSide: BorderSide(
-          color: Colors.grey,
-        )),
+          borderSide: BorderSide(
+            color: Colors.grey,
+          ),
+        ),
       ),
     );
   }

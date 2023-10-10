@@ -1,14 +1,14 @@
-import 'package:alpha_bookstore/core/constants.dart';
-import 'package:alpha_bookstore/core/utils/app_router.dart';
-import 'package:alpha_bookstore/core/utils/assets_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../../../core/constants.dart';
+import '../../../../../../core/utils/app_router.dart';
+import '../../../../../../core/utils/assets_manger.dart';
 import '../../../../../../core/widgets/custom_btn.dart';
 import '../../../../../../core/widgets/custom_form_field.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class RegisterViewBody extends StatelessWidget {
+  const RegisterViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,17 @@ class LoginViewBody extends StatelessWidget {
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 15),
           const CustomTextFormField(
+            hint: "Name",
+            icon: Icon(Icons.close),
+          ),
+          const SizedBox(height: 24),
+          const CustomTextFormField(
             hint: "Username",
+            icon: Icon(Icons.close),
+          ),
+          const SizedBox(height: 24),
+          const CustomTextFormField(
+            hint: "Email",
             icon: Icon(Icons.close),
           ),
           const SizedBox(height: 24),
@@ -33,7 +43,7 @@ class LoginViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 55),
           CustomBtn(
-            text: 'Log In',
+            text: 'Create Account',
             backgroundColor: AppConstants.kPrimaryColor,
             onPressed: () {},
           ),
@@ -42,17 +52,17 @@ class LoginViewBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "Do't have an account yet?  ",
+                "Already have an account?  ",
                 style: TextStyle(
                   color: Colors.grey,
                 ),
               ),
               GestureDetector(
                 onTap: () {
-                  GoRouter.of(context).pushReplacement(AppRouter.kRegisterView);
+                  GoRouter.of(context).pushReplacement(AppRouter.kLoginView);
                 },
                 child: const Text(
-                  "Sign up here",
+                  "Log in here",
                   style: TextStyle(
                     color: Colors.grey,
                     fontSize: 18,

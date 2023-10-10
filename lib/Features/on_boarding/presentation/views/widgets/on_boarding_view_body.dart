@@ -31,7 +31,9 @@ class OnBoardingViewBody extends StatelessWidget {
             text: "Create Account",
             textColor: AppConstants.kPrimaryColor,
             backgroundColor: Colors.white,
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kRegisterView);
+            },
           ),
           const SizedBox(height: 20),
           CustomBtn(
