@@ -1,6 +1,8 @@
 import 'package:alpha_bookstore/core/constants.dart';
+import 'package:alpha_bookstore/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/assets_manger.dart';
 import '../../../../../core/widgets/custom_btn.dart';
@@ -33,9 +35,11 @@ class OnBoardingViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           CustomBtn(
-            text: "Login as Guest",
+            text: "Log in",
             backgroundColor: Colors.transparent,
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kLoginView);
+            },
           ),
         ],
       ),
