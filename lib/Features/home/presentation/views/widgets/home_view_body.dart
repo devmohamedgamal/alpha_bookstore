@@ -13,68 +13,67 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 30),
-                child: CustomAppBar(),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  "Hello, Tricia👋",
-                  style: TextStyle(
-                    color: AppConstants.kPrimaryColor,
-                    fontSize: 35,
-                    fontFamily: AppConstants.kFontFamily,
-                  ),
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 30),
+              child: CustomAppBar(),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                "Hello, Tricia👋",
+                style: TextStyle(
+                  color: AppConstants.kPrimaryColor,
+                  fontSize: 35,
+                  fontFamily: AppConstants.kFontFamily,
                 ),
               ),
-              const SizedBox(height: 8),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  "What do you want to read today?",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 20,
-                    fontFamily: AppConstants.kFontFamily,
-                  ),
+            ),
+            const SizedBox(height: 8),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                "What do you want to read today?",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 20,
+                  fontFamily: AppConstants.kFontFamily,
                 ),
               ),
-              const SizedBox(height: 26),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: CustomSearchTextField(),
-              ),
-              const SizedBox(height: 26),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: CategoryOfBooksWidget(),
-              ),
-              const SizedBox(height: 26),
-              const BooksListView(),
-              const SizedBox(height: 26),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  "New Arrivals",
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontFamily: AppConstants.kFontFamily,
-                  ),
+            ),
+            const SizedBox(height: 26),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: CustomSearchTextField(),
+            ),
+            const SizedBox(height: 26),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: CategoryOfBooksWidget(),
+            ),
+            const SizedBox(height: 26),
+            const BooksListView(),
+            const SizedBox(height: 26),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                "New Arrivals",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontFamily: AppConstants.kFontFamily,
                 ),
               ),
-              const SizedBox(height: 20),
-              const BooksListView(),
-            ],
-          ),
+            ),
+            const SizedBox(height: 20),
+            const BooksListView(),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
