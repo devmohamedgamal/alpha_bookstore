@@ -43,6 +43,16 @@ class OnBoardingViewBody extends StatelessWidget {
               GoRouter.of(context).push(AppRouter.kLoginView);
             },
           ),
+          const SizedBox(height: 20),
+          TextButton(
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kHomeView);
+            },
+            child: const Text(
+              'Login As Guest',
+              style: TextStyle(fontSize: 18, color: Colors.white),
+            ),
+          ),
         ],
       ),
     );

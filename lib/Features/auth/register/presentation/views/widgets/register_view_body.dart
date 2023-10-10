@@ -24,17 +24,17 @@ class RegisterViewBody extends StatelessWidget {
           SizedBox(height: MediaQuery.of(context).size.height / 15),
           const CustomTextFormField(
             hint: "Name",
-            icon: Icon(Icons.close),
+            icon: Icon(Icons.badge_outlined),
           ),
           const SizedBox(height: 24),
           const CustomTextFormField(
             hint: "Username",
-            icon: Icon(Icons.close),
+            icon: Icon(Icons.person_outline),
           ),
           const SizedBox(height: 24),
           const CustomTextFormField(
             hint: "Email",
-            icon: Icon(Icons.close),
+            icon: Icon(Icons.email_outlined),
           ),
           const SizedBox(height: 24),
           const CustomTextFormField(
