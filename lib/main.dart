@@ -1,10 +1,15 @@
 import 'package:alpha_bookstore/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'Features/on_boarding/presentation/views/on_boarding_view.dart';
+import 'Features/home/data/repos/home_repo_impl.dart';
+import 'Features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
+import 'Features/home/presentation/manger/newest_books_cubit/newest_books_cubit.dart';
+import 'core/service_locator.dart';
 
 void main() {
+  setupServiceLocator();
   runApp(const AlphaBookStore());
 }
 
@@ -19,9 +24,23 @@ class AlphaBookStore extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (_, child) {
-          return MaterialApp.router(
-            debugShowCheckedModeBanner: false,
-            routerConfig: AppRouter.router,
+          return MultiBlocProvider(
+            providers: [
+            BlocProvider(
+              create: (context) => FeaturedBooksCubit(
+                getIt.get<HomeRepoImpl>(),
+              )..fetchFeaturedBooks(),
+            ),
+            BlocProvider(
+              create: (context) => NewestBooksCubit(
+                getIt.get<HomeRepoImpl>(),
+              )..fetchNewestBooks(),
+            ),
+          ],
+            child: MaterialApp.router(
+              debugShowCheckedModeBanner: false,
+              routerConfig: AppRouter.router,
+            ),
           );
         });
   }

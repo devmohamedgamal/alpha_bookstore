@@ -1,10 +1,11 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../../core/constants.dart';
+import '../../../../home/data/models/book_model/book_model.dart';
 
 class SomeBookDetailsWidget extends StatelessWidget {
-  const SomeBookDetailsWidget({super.key});
+  const SomeBookDetailsWidget({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -21,37 +22,37 @@ class SomeBookDetailsWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          const Text(
-            "Page count : 155",
-            style: TextStyle(
+          Text(
+            "Page count : ${bookModel.volumeInfo!.pageCount}",
+            style: const TextStyle(
               fontSize: 18,
             ),
           ),
           const SizedBox(height: 5),
-          const Text(
-            "Published Date : 2004",
-            style: TextStyle(
+          Text(
+            "Published Date : ${bookModel.volumeInfo!.publishedDate}",
+            style: const TextStyle(
               fontSize: 18,
             ),
           ),
           const SizedBox(height: 5),
-          const Text(
-            "Category : Computers",
-            style: TextStyle(
+          Text(
+            "Category : ${bookModel.volumeInfo!.categories ?? 'Unknown'}",
+            style: const TextStyle(
               fontSize: 18,
             ),
           ),
           const SizedBox(height: 5),
-          const Text(
-            "Rating count : 2004",
-            style: TextStyle(
+          Text(
+            "Rating count : ${bookModel.volumeInfo!.ratingsCount ?? 0}",
+            style: const TextStyle(
               fontSize: 18,
             ),
           ),
           const SizedBox(height: 5),
-          const Text(
-            "Language : EN",
-            style: TextStyle(
+          Text(
+            "Language : ${bookModel.volumeInfo!.language}",
+            style: const TextStyle(
               fontSize: 18,
             ),
           ),

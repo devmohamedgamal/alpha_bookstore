@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 
 class RatingWidget extends StatelessWidget {
-  const RatingWidget({super.key});
+  const RatingWidget({super.key, required this.rate});
+  final num rate;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class RatingWidget extends StatelessWidget {
             width: 6,
           ),
           const Text(
-            "4.0",
+            "4.1",
             style: TextStyle(fontSize: 20),
           ),
         ],

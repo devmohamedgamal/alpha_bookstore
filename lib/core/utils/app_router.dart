@@ -1,6 +1,7 @@
 import 'package:alpha_bookstore/Features/Book_details/presentation/views/book_details_view.dart';
 import 'package:alpha_bookstore/Features/auth/login/presentation/views/login_view.dart';
 import 'package:alpha_bookstore/Features/auth/register/presentation/views/register_view.dart';
+import 'package:alpha_bookstore/Features/home/data/models/book_model/book_model.dart';
 import 'package:alpha_bookstore/Features/home/presentation/views/home_view.dart';
 import 'package:alpha_bookstore/Features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:go_router/go_router.dart';
@@ -32,7 +33,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kBookDetialsView,
-        builder: (context, state) => const BookDetailsView(),
+        builder: (context, state) => BookDetailsView(bookModel: state.extra as BookModel,),
       ),
     ],
   );
