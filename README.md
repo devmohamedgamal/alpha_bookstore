@@ -1,16 +1,25 @@
-# alpha_bookstore
+# Alpha bookstore
 
 A new Flutter project.
+##### app for fetch some books 
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Api](https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&q=Novel) - Google books api
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+# Screens
+  <div>
+    <img src="https://github.com/devmohamedgamal/alpha_bookstore/blob/main/screens_for_app/on_boarding_view.jpg" width="100",height="200">
+    <img src="https://github.com/devmohamedgamal/alpha_bookstore/blob/main/screens_for_app/login_view.jpg" width="100",height="200">
+    <img src="https://github.com/devmohamedgamal/alpha_bookstore/blob/main/screens_for_app/register_view.jpg" width="100",height="200">
+    <img src="https://github.com/devmohamedgamal/alpha_bookstore/blob/main/screens_for_app/home_view.jpg" width="100",height="200">
+    <img src="https://github.com/devmohamedgamal/alpha_bookstore/blob/main/screens_for_app/book_details_view.jpg" width="100",height="200">
+    <img src="https://github.com/devmohamedgamal/alpha_bookstore/blob/main/screens_for_app/preview_view.jpg" width="100",height="200">
+
+  </div>
+
