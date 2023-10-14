@@ -6,6 +6,7 @@ import '../../../../../core/constants.dart';
 import '../../../../../core/function/launch_url.dart';
 import '../../../../../core/utils/assets_manger.dart';
 import '../../../../../core/widgets/custom_btn.dart';
+import 'book_details_item_btn.dart';
 import 'book_item_desc.dart';
 import 'rating_widget.dart';
 import 'some_book_details.dart';
@@ -70,19 +71,8 @@ class BookDetailsItem extends StatelessWidget {
           bookModel: bookModel,
         ),
         const SizedBox(height: 26),
-        CustomBtn(
-          text: "Add To Cart",
-          backgroundColor: AppConstants.kPrimaryColor,
-          onPressed: () {},
-        ),
-        const SizedBox(height: 4),
-        CustomBtn(
-          text: "Free Preview",
-          backgroundColor: Colors.white,
-          textColor: Colors.black,
-          onPressed: () {
-            customLaunchUrl(context, bookModel.volumeInfo!.previewLink!);
-          },
+        BookDetailsItemBtn(
+          previewLink: bookModel.volumeInfo!.previewLink!,
         ),
       ],
     );
